@@ -36,3 +36,12 @@ MouseClickGun:
 
 NoFireGun:
 <decore/NoFireGun.decore>
+
+ClosestSelectEnemy:
+<decore/ClosestSelectEnemy.decore>
+
+StrongestSelectEnemy:
+<decore/StrongestSelectEnemy.decore>
+
+WeakestSelectEnemy:
+<decore/WeakestSelectEnemy.decore>
