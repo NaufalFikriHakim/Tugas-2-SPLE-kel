@@ -1,0 +1,16 @@
+delta LowPowerGun {
+
+    modifies jab.module.Gun {
+
+        modifies fire() {
+            if (bot.enemy != null) {
+                double bulletPower = 0.1; // Always fire with minimum power
+                bot.bulletPower = bulletPower;
+                if (bot.getGunHeat() == 0) {
+                    robocode.Bullet b = bot.setFireBullet(bulletPower);
+                    bot.registerBullet(b);
+                }
+            }
+        }
+    }
+}

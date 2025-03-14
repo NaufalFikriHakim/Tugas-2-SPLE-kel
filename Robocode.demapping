@@ -37,6 +37,9 @@ MouseClickGun:
 NoFireGun:
 <decore/NoFireGun.decore>
 
+LowPowerGun:
+<decore/LowPowerGun.decore>
+
 ClosestSelectEnemy:
 <decore/ClosestSelectEnemy.decore>
 

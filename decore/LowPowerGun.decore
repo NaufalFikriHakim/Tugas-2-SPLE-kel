@@ -1,0 +1,17 @@
+ configuration delta "LowPowerGun"
+	dialect <http://www.emftext.org/java>
+		modifies <../src/jab/module/Gun.java>
+		{
+	modifyStatementListContainer(<method:jab.module.Gun.fire()>, "public void fire() {
+            if (bot.enemy != null) {
+                double bulletPower = 0.1; // Always fire with minimum power
+                bot.bulletPower = bulletPower;
+                if (bot.getGunHeat() == 0) {
+                    robocode.Bullet b = bot.setFireBullet(bulletPower);
+                    bot.registerBullet(b);
+                }
+            }
+	}
+", "LowPowerGun", false);
+	}
+	
