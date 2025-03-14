@@ -24,3 +24,6 @@ LinearTargeting:
 
 MouseTargeting:
 <decore/MouseTargeting.decore>
+
+ZigzagMovement:
+<decore/ZigzagMovement.decore>

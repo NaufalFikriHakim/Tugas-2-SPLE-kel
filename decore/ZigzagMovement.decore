@@ -1,0 +1,37 @@
+ configuration delta "ZigzagMovement"
+	dialect <http://www.emftext.org/java>
+		requires <AutoMovement.decore>
+		modifies <../src/jab/module/Movement.java>
+		{
+	addClassifierImport(<class:jab.module.Movement>, "robocode.HitWallEvent");
+	addMember(<class:jab.module.Movement>, "private int turnRightValue = 45;
+");
+	addMember(<class:jab.module.Movement>, "private int turnLeftValue = 45;
+");
+	addMember(<class:jab.module.Movement>, "private boolean turnRight = true;
+");
+	addMember(<class:jab.module.Movement>, "private boolean count = 0;
+");
+	modifyStatementListContainer(<method:jab.module.Movement.move()>, "public void move() {
+		move$ZigzagMovement();
+			// Start moving (and turning)
+			bot.setAhead(10000);
+	}
+", "ZigzagMovement", true);
+	addMember(<class:jab.module.Movement>, "public void listen(Event e) {
+			if (e instanceof HitWallEvent) {
+				if (turnRight && count == 2) {
+					count = 0;
+					turnRight = false;
+					bot.setTurnRight(turnRightValue);
+				} else {
+					turnRight = true;
+					count++;
+					bot.setTurnLeft(turnLeftValue);
+				}
+				
+			}
+		}
+");
+	}
+	
