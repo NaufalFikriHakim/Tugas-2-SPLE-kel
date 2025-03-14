@@ -1,0 +1,22 @@
+delta Cornering requires AutoMovement{
+
+	modifies jab.module.Movement{
+		adds import robocode.HitWallEvent;
+		
+		adds private int turnRightValue = 45;
+		
+		modifies move(){
+			original();
+			// Start moving (and turning)
+			bot.setAhead(10000);
+		}
+		
+		adds public void listen(Event e) {
+			if (e instanceof HitWallEvent) {
+				bot.setTurnRight(turnRightValue);
+			}
+		}
+	
+	}
+	
+}

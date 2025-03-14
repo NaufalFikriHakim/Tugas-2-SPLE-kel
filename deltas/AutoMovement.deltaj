@@ -1,0 +1,10 @@
+delta AutoMovement {
+	modifies jab.module.Movement{
+		adds import robocode.Event;
+	
+		modifies move() {
+			// Limit our speed to 5
+			bot.setMaxVelocity(8);
+		}
+	}
+}
