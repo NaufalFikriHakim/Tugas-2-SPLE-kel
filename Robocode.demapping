@@ -27,3 +27,12 @@ MouseTargeting:
 
 ZigzagMovement:
 <decore/ZigzagMovement.decore>
+
+MaximumPowerGun:
+<decore/MaximumPowerGun.decore>
+
+MouseClickGun:
+<decore/MouseClickGun.decore>
+
+NoFireGun:
+<decore/NoFireGun.decore>
